@@ -1,6 +1,6 @@
 # posthtml-attrs-sorter
 
-> A [PostHTML](https://github.com/posthtml/posthtml) plugin for sorting of attributes in the selector based on the given order.
+> A [PostHTML](https://github.com/posthtml/posthtml) plugin for sort attribute of the tag based on the given order.
 
 [![Travis](https://img.shields.io/travis/mrmlnc/posthtml-attrs-sorter.svg?style=flat-square)](https://travis-ci.org/mrmlnc/posthtml-attrs-sorter)
 [![NPM version](https://img.shields.io/npm/v/posthtml-attrs-sorter.svg?style=flat-square)](https://www.npmjs.com/package/posthtml-attrs-sorter)

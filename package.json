@@ -1,6 +1,6 @@
 {
   "name": "posthtml-attrs-sorter",
-  "description": "Sorting of attributes in the selector based on the given order",
+  "description": "The sorting attribute of the tag based on the given order",
   "version": "0.1.0",
   "author": {
     "name": "Denis Malinochkin",
