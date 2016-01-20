@@ -46,6 +46,10 @@ You can also use this plugin in the PostHTML plugin to [Gulp](https://www.npmjs.
 }
 ```
 
+## Plugins for editors and IDE
+
+  * [Visual Studio Code](https://github.com/mrmlnc/vscode-attrs-sorter)
+
 ## Changelog
 
   * **v0.1.0** (2015.01.20) — Initialization().
