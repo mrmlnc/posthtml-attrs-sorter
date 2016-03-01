@@ -52,7 +52,7 @@ You can also use this plugin in the PostHTML plugin to [Gulp](https://www.npmjs.
 
 ## Changelog
 
-  * **v0.1.0** (2015.01.20) — Initialization().
+See the [Releases section of our GitHub project](https://github.com/mrmlnc/vscode-attrs-sorter/releases) for changelogs for each release version.
 
 ## License
 
