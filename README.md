@@ -52,7 +52,7 @@ You can also use this plugin in the PostHTML plugin to [Gulp](https://www.npmjs.
 
 ## Changelog
 
-See the [Releases section of our GitHub project](https://github.com/mrmlnc/vscode-attrs-sorter/releases) for changelogs for each release version.
+See the [Releases section of our GitHub project](https://github.com/mrmlnc/posthtml-attrs-sorter/releases) for changelogs for each release version.
 
 ## License
 
