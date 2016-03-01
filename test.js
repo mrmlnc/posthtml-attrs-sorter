@@ -18,7 +18,7 @@ var test = function(input, output, opts, done) {
 it('Standard test', function(done) {
   test(
     '<input type="text" class="form-control" name="testInput" autofocus autocomplete="off" id="testId">',
-    '<input class="form-control" id="testId" name="testInput" type="text" autofocus="" autocomplete="off">',
+    '<input class="form-control" id="testId" name="testInput" type="text" autofocus autocomplete="off">',
     {},
     done
   );

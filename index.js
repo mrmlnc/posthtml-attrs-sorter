@@ -36,7 +36,7 @@ module.exports = function(opts) {
 
           return orderList.indexOf(a) - orderList.indexOf(b);
         }).concat(noSortAttrs).forEach(function(attr) {
-          sortAttrs[attr] = node.attrs[attr];
+          sortAttrs[attr] = (node.attrs[attr]) ? node.attrs[attr] : true;
         });
 
         node.attrs = sortAttrs;
