@@ -1,7 +1,7 @@
 {
   "name": "posthtml-attrs-sorter",
   "description": "The sorting attribute of the tag based on the given order",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": {
     "name": "Denis Malinochkin",
     "url": "canonium.com"
