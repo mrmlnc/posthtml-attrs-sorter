@@ -7,7 +7,7 @@
     "url": "canonium.com"
   },
   "repository": "mrmlnc/posthtml-attrs-sorter",
-  "licenses": "MIT",
+  "license": "MIT",
   "keywords": [
     "posthtml",
     "html",
