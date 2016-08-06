@@ -19,8 +19,8 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "mocha": "^2.3.4",
-    "posthtml": "^0.8.1",
+    "mocha": "^3.0.1",
+    "posthtml": "^0.9.0",
     "xo": "^0.16.0"
   },
   "engines": {
