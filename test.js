@@ -1,5 +1,5 @@
-var posthtml = require('posthtml');
 var assert = require('assert');
+var posthtml = require('posthtml');
 var m = require('./');
 
 var test = function(input, output, opts, done) {
@@ -10,8 +10,8 @@ var test = function(input, output, opts, done) {
         assert.equal(result.html, output);
         done();
       })
-      .catch(function(error) {
-        done(error);
+      .catch(function(err) {
+        done(err);
       });
 };
 
