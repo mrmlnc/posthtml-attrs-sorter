@@ -1,6 +1,6 @@
 module.exports = function(opts) {
   // Added Angular after data. See https://github.com/mdo/code-guide/issues/106
-  var orderList = opts.order || ['class', 'id', 'name', 'data', 'ng', 'src', 'for', 'type', 'href', 'values', 'title', 'alt', 'role', 'aria'];
+  var orderList = opts && opts.order || ['class', 'id', 'name', 'data', 'ng', 'src', 'for', 'type', 'href', 'values', 'title', 'alt', 'role', 'aria'];
 
   return function(tree) {
     tree.walk(function(node) {
