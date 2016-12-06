@@ -38,13 +38,12 @@ You can also use this plugin in the PostHTML plugin to [Gulp](https://www.npmjs.
 
 ## Options
 
-```js
-{
-  // An array of attributes in the correct order
-  // Default: see http://codeguide.co/#html-attribute-order
-  order: []
-}
-```
+#### order
+
+  * Type: `string[]`
+  * Default: http://codeguide.co/#html-attribute-order
+
+An array of attributes in the correct order.
 
 ## Plugins for editors and IDE
 
