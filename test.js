@@ -5,14 +5,14 @@ var m = require('./');
 var test = function(input, output, opts, done) {
   posthtml()
     .use(m(opts))
-      .process(input)
-      .then(function(result) {
-        assert.equal(result.html, output);
-        done();
-      })
-      .catch(function(err) {
-        done(err);
-      });
+    .process(input)
+    .then(function(result) {
+      assert.equal(result.html, output);
+      done();
+    })
+    .catch(function(err) {
+      done(err);
+    });
 };
 
 it('Standard test', function(done) {
@@ -59,6 +59,29 @@ it('Empty config test', function(done) {
     '<a id="testId" href="#" class="testClass"></a>',
     {
       order: []
+    },
+    done
+  );
+});
+
+it('Custom config bug (issue #12)', function(done) {
+  test(
+    '<img width="20" src="../images/image.png" height="40" alt="image" class="cls" id="id2">',
+    '<img id="id2" class="cls" src="../images/image.png" width="20" height="40" alt="image">',
+    {
+      order: [
+        'id',
+        'class',
+        'src',
+        'width',
+        'height',
+        'for',
+        'type',
+        'href',
+        'title',
+        'alt',
+        'value'
+      ]
     },
     done
   );
