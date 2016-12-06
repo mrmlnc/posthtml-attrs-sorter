@@ -1,47 +1,59 @@
 module.exports = function(opts) {
   // Added Angular after data. See https://github.com/mdo/code-guide/issues/106
-  var orderList = (opts && opts.order) || ['class', 'id', 'name', 'data', 'ng', 'src', 'for', 'type', 'href', 'values', 'title', 'alt', 'role', 'aria'];
+  var orderList = (opts && opts.order) || [
+    'class', 'id', 'name',
+    'data', 'ng', 'src',
+    'for', 'type', 'href',
+    'values', 'title', 'alt',
+    'role', 'aria'
+  ];
+
+  // A RegExp's for filtering and sorting
+  var orderListFilterRegExp = new RegExp('(' + orderList.join('|') + ')');
+  var orderListRegExp = orderList.map(function(item) {
+    return new RegExp('^' + item);
+  });
 
   return function(tree) {
     tree.walk(function(node) {
-      if (node.attrs) {
-        var attrs = Object.keys(node.attrs);
-        if (attrs.length === 1) {
-          return node;
-        }
+      if (!node.attrs) {
+        return node;
+      }
 
-        var sortAttrs = {};
-        var noSortAttrs = [];
-        attrs = attrs.filter(function(attr) {
-          // The name attribute can be shared (i.e. data-*, aria-*, ng-*),
-          // so used a regular expression
-          for (var i = 0; i < orderList.length; i++) {
-            if (new RegExp(orderList[i]).test(attr)) {
-              return true;
-            }
+      var attrs = Object.keys(node.attrs);
+      if (attrs.length === 1) {
+        return node;
+      }
+
+      var sortedAttrs = [];
+      var notSortedAttrs = [];
+      attrs = attrs
+        // The separation of the attributes on a sortable and not sortable
+        .filter(function(attr) {
+          if (orderListFilterRegExp.test(attr)) {
+            return true;
           }
-
-          noSortAttrs.push(attr);
+          notSortedAttrs.push(attr);
           return false;
-        }).sort(function(a, b) {
-          orderList.forEach(function(item) {
-            if (new RegExp(item).test(a)) {
-              a = item;
+        })
+        .sort(function(a, b) {
+          orderListRegExp.forEach(function(re, index) {
+            if (re.test(a)) {
+              a = index;
             }
-
-            if (new RegExp(item).test(b)) {
-              b = item;
+            if (re.test(b)) {
+              b = index;
             }
           });
 
-          return orderList.indexOf(a) - orderList.indexOf(b);
-        }).concat(noSortAttrs).forEach(function(attr) {
-          sortAttrs[attr] = (node.attrs[attr]) ? node.attrs[attr] : true;
+          return a - b;
+        })
+        .concat(notSortedAttrs)
+        .forEach(function(attr) {
+          sortedAttrs[attr] = (node.attrs[attr]) ? node.attrs[attr] : true;
         });
 
-        node.attrs = sortAttrs;
-      }
-
+      node.attrs = sortedAttrs;
       return node;
     });
 
