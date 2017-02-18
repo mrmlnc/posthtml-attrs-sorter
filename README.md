@@ -41,7 +41,23 @@ You can also use this plugin in the PostHTML plugin to [Gulp](https://www.npmjs.
 #### order
 
   * Type: `string[]`
+  * Info:
+    * Strings are turned into [Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+    * Use `$unknown$` to specify where the unsorted attributes are placed
   * Default: http://codeguide.co/#html-attribute-order
+  
+```json
+{
+  "order": [
+    "class", "id", "name",
+    "data-.+", "ng-.+", "src",
+    "for", "type", "href",
+    "values", "title", "alt",
+    "role", "aria-.+",
+    "$unknown$"
+  ]
+}
+```
 
 An array of attributes in the correct order.
 

@@ -86,3 +86,19 @@ it('Custom config bug (issue #12)', function(done) {
     done
   );
 });
+
+it('Put unsorted in specific location', function(done) {
+  test(
+    '<img width="20" src="../images/image.png" height="40" alt="image" class="cls" id="id2">',
+    '<img src="../images/image.png" id="id2" width="20" height="40" alt="image" class="cls">',
+    {
+      order: [
+        'src',
+        'id',
+        '$unknown$',
+        'class'
+      ]
+    },
+    done
+  );
+});
