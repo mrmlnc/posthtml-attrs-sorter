@@ -1,5 +1,7 @@
 # posthtml-attrs-sorter
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mrmlnc/posthtml-attrs-sorter.svg)](https://greenkeeper.io/)
+
 > A [PostHTML](https://github.com/posthtml/posthtml) plugin for sort attribute of the tag based on the given order.
 
 [![Travis](https://img.shields.io/travis/mrmlnc/posthtml-attrs-sorter.svg?style=flat-square)](https://travis-ci.org/mrmlnc/posthtml-attrs-sorter)
